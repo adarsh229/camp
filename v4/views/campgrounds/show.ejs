@@ -1,0 +1,21 @@
+
+<% include ../partials/headers %>
+
+<h2> This is the show page template </h2>
+
+<p>
+    <%= campground.name %>
+</p>
+<img src="<%= campground.image%>">
+
+<p>
+    <%= campground.description %>
+</p>
+
+<a class="btn btn-success btn-large" href="/campgrounds/<%= campground._id%>/comments/new">add new comment </a>
+
+<% campground.comments.forEach(function(comment) { %>
+    <p>  <b> <%= comment.author %> </b> - <%= comment.text %> </p>
+<% }) %>
+
+<% include ../partials/footer %>
